@@ -2,6 +2,8 @@ package com.adarsh.spotify.di
 
 import android.content.Context
 import com.adarsh.spotify.R
+import com.adarsh.spotify.adapters.SwipeSongAdapter
+import com.adarsh.spotify.exoplayer.MusicServiceConnection
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
@@ -24,5 +26,13 @@ object AppModule {
         RequestOptions().placeholder(R.drawable.ic_launcher_background).error(R.drawable.ic_launcher_background)
             .diskCacheStrategy(DiskCacheStrategy.DATA)
     )
+
+    @Singleton
+    @Provides
+    fun provideMusicServiceConnection (@ApplicationContext context: Context)= MusicServiceConnection(context)
+
+    @Singleton
+    @Provides
+    fun provideSongAdapter () = SwipeSongAdapter()
 
 }
