@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MySpotify</string>
+    <string name="notification_channel_name">music channel</string>
+    <string name="notification_channel_desc">playing music</string>
 </resources>
